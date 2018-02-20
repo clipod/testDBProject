@@ -8,7 +8,7 @@ Policy_items : policy_item_id(pk),policy_id(fk),policy_item_name, amount.
 Policy_Item_Coverage: policy_item_coverage_id(pk),coverage_id(fk),policy_item_id(fk),amount(drerived attribute),markup_id
 Markup_table: markup_id(pk),group(home or auto),markup_name,markup_percentage.
 Markup_policy_coverage_item : markup_id,policy_item_coverage_id
-Coverage: coverage_id(pk),group(home or Auto),coverage_name,created_timestamp,updated_timestamp,coverage_min_amount,coverage_max_amount, deductible.
+Coverage: coverage_id(pk),group(home or Auto),coverage_name,created_timestamp,updated_timestamp,coverage_min_amount,coverage_max_amount,deductible.
 Discount: discount_id(pk), group,discount_name,min_percentage,max_percentage.
 Policy_discounts: policy_discounts(pk),discount_id(fk),policy_item_id(fk),percentage.
 Property : home_id(pk),year of built,square feet,number of stories,detatched structures,saftey features,insurance history,policy_item(fk),ownership_type
