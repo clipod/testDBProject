@@ -26,3 +26,5 @@ remove policy time from policy table
 coverage_name instead of descripiton
 add deductableamount to the coverage table
 
+
+

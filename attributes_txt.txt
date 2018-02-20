@@ -2,7 +2,7 @@ Attributes:
 Customer: customer_id (PK) ,cust_type, creationTime
 Person: Person_Id(pk), Customer_Id(fk),Firstname,Lastname,DOB, Phone ,gender,Number,Email,Address,occupation, IncomeDetails, CreationTime,Status(Active/Inactive),type.
 Corporate: corporate_id(pk), customer_id(fk),Company Name, Address, phone number, email, status(active/inactive)
-Policy: policy_id (pk),policy_number, customer_id(fk) ,start_date,end_date,policy_created(timestamp),due-date,renewal_date,policy_premium.
+Policy: policy_id (pk),policy_number, customer_id(fk) ,start_date,end_date,policy_created(timestamp),renewal_date,policy_premium.
 policy_status: policy_status_id(pk), policy_id(fk),emp_id(fk),policy_status,modified_time(timestamp),notes.
 Policy_items : policy_item_id(pk),policy_id(fk),policy_item_name, amount.
 Policy_Item_Coverage: policy_item_coverage_id(pk),coverage_id(fk),policy_item_id(fk),amount(drerived attribute),markup_id
@@ -13,16 +13,18 @@ Discount: discount_id(pk), group,discount_name,min_percentage,max_percentage.
 Policy_discounts: policy_discounts(pk),discount_id(fk),policy_item_id(fk),percentage.
 Property : home_id(pk),year of built,square feet,number of stories,detatched structures,saftey features,insurance history,policy_item(fk),ownership_type
 Automobile : auto_id(pk),vehicle type, price,make,model,vin number ,driver,milage,vehiclenumberplate,createdDat,policy_item(fk),person_id(driver), ownership_type
-Employee : emp_id(pk),role_id(fk),fname,Lname,ph,email,address,branch_id(fk)
+Employee : emp_id(pk),role_id(fk),fname,Lname,ph,email,address,branch_id(fk),Department.
 Branch: branch_id(pk),name,location,area,zipcode,state,phone_numbers,email,fax_numbers.
-Roles : role_id(pk),role
-Bills : bill_id(pk),policy_id(fk),amount,created date(timestamp).
+Roles : role_id(pk),role_name,role_description
+Bills : bill_id(pk),policy_id(fk),due_date,status(paid/unpaid/partial paid).
+bills_payments: payment_id(fk),bill_id(fk)
 claims: claim_id(pk),claimant_id(fk),cust_id(fk),policy_item_coverage_id(fk), claimcreatedtime(timestamp),incident_id(fk)
 reserve: reserve_id(pk),claim_id(fk),amount,adjustment_amount.
 claimant : claimant_id(pk),name,phone,address,gender.
-claim_possessions : cp_id,claim-id(fk),name,desc,salvage amount
+claim_possessions : cp_id,claim-id(fk),name,desc,salvage_estimate,payment_id(fk)
 lossparties :loss_party_id(pk), claim_id(fk),name,profession,company,gender.
-Payments : payment_id(pk),reserve_id(fk),amount,timestamp.
+reserve_payments:reserve_payment_id(pk),reserve_id(fk),payment_id(fk),details,created_time(timestamp).
+Payments : payment_id(pk),amount,created_time,status,CreditOrdDebit,type.
 Claimstatus : claim_statusid(pk),claim_id(fk),status,created_time,employee_id(fk),claimant_type.
 property_characterstics : pc_id(pk),characterstic_name,characterstic_description
 Auto_characterstics : ac_id(pk),characterstic_name,characterstic_description
@@ -30,8 +32,8 @@ Property_char_relation : pc_id(fk),home_id(fk)
 Auto_char_relation : ac_id(fk),auto_id(fk)
 Incident : incident_id(pk),incident_type,notes,incidentTime
 Timestamp: duration, log, interest_percentage,reserve_id(fk),amount.
-Subrogate: subrogate_id(pk),company_name,claim_id(fk),company_details,notes,amount.
-
+Subrogate: subrogate_id(pk),company_name,claim_id(fk),description,amount,payment_id.
+customer_notes:customer_id,customer_notes_id(pk),categorey,notes.
 
 
 
