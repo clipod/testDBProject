@@ -23,7 +23,7 @@ claimant : claimant_id(pk),name,phone,address,gender.
 claim_possessions : cp_id,claim-id(fk),name,desc,salvage amount
 lossparties :loss_party_id(pk), claim_id(fk),name,profession,company,gender.
 Payments : payment_id(pk),reserve_id(fk),amount,timestamp.
-Claimstatus : claim_statusid(pk),claim_id(fk),status,created_time,employee_id(fk).
+Claimstatus : claim_statusid(pk),claim_id(fk),status,created_time,employee_id(fk),claimant_type.
 property_characterstics : pc_id(pk),characterstic_name,characterstic_description
 Auto_characterstics : ac_id(pk),characterstic_name,characterstic_description
 Property_char_relation : pc_id(fk),home_id(fk)

@@ -17,6 +17,8 @@ policy_discounts percentage is the final discount percentage given to the policy
 multiple rows to add discounts for each policy item
 
 
+github commands
+git
 
 
 
