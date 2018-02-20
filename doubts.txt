@@ -1,0 +1,26 @@
+policy_status can be week entitiy
+
+policy_premium=money,
+
+policy_items table example for policy_item_name (mercedesc300_auto_policy,lakeview home policy) and amount(total) policy is derived from ?? and the amount in the policy_items table different form policy table amoount,
+tell me about policy_item_coverage amount
+
+examples for markup name - 
+auto-sports car,roadster,v8,10 years plus,exotic,high milage,
+home-flood zone, wooden floor, shared backyard,
+
+examples for auto_characterstics,property_characterstics
+explain caliculation of policy_item_coverage "amount" (caliculation of coverage amount + markup percentage amount)
+examples for discount name - sprinkler, fire alarm, security, multi line(more than one insurnce), good driving, multicar, anti theft, wheel locks
+gated community, good school district,
+policy_discounts percentage is the final discount percentage given to the policy right ?/
+multiple rows to add discounts for each policy item
+
+
+
+
+
+remove policy time from policy table
+coverage_name instead of descripiton
+add deductableamount to the coverage table
+
